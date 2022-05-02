@@ -42,6 +42,7 @@ void xc_gga_c_lypr_init(xc_func_type *p)
 {
   assert(p!=NULL && p->params == NULL);
   p->params = libxc_malloc(sizeof(gga_c_lypr_params));
+  xc_hyb_init_hybrid(p, 0.0);
 }
 
 #include "decl_gga.h"
@@ -59,7 +60,7 @@ const xc_func_info_type xc_func_info_gga_c_lypr = {
   {&xc_ref_Ai2021_1207, NULL, NULL, NULL, NULL},
   XC_FLAGS_3D | MAPLE2C_FLAGS,
   1e-14,
-  {LYPR_N_PAR, lypr_names, lypr_desc, lypr_values, set_ext_params_cpy},
+  {LYPR_N_PAR, lypr_names, lypr_desc, lypr_values, set_ext_params_cpy_omega},
   xc_gga_c_lypr_init, NULL,
   NULL, work_gga, NULL
 };
