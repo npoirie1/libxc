@@ -60,7 +60,7 @@ const xc_func_info_type xc_func_info_gga_c_lypr = {
   {&xc_ref_Ai2021_1207, NULL, NULL, NULL, NULL},
   XC_FLAGS_3D | MAPLE2C_FLAGS,
   1e-14,
-  {LYPR_N_PAR, lypr_names, lypr_desc, lypr_values, set_ext_params_cpy_omega},
+  {LYPR_N_PAR, lypr_names, lypr_desc, lypr_values, set_ext_params_cpy},
   xc_gga_c_lypr_init, NULL,
   NULL, work_gga, NULL
 };
